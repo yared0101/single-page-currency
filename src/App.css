@@ -1,0 +1,88 @@
+/* .main-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.top {
+    flex: 1;
+    flex-direction: row;
+}
+.mid {
+    flex: 1;
+    flex-direction: row;
+}
+.bottom {
+    flex: 1;
+    flex-direction: row;
+}
+.top .main-right {
+    flex-direction: row;
+} */
+
+:root {
+    --backgroundColor: #222222;
+}
+.me-card {
+    border: 1px solid lightgrey;
+    margin: 2ch;
+    padding: 2ch;
+    border-radius: 1ch;
+    border-color: blue;
+    /* width: 100%; */
+}
+#root {
+    color: white;
+    background-color: rgb(39, 39, 51);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    position: absolute;
+}
+#root input {
+    background-color: rgb(39, 39, 51);
+    border-color: lightgrey !important;
+    color: white;
+}
+
+#root .css-2613qy-menu {
+    background-color: rgb(39, 39, 51) !important;
+}
+.me-card {
+    background-color: var(--backgroundColor) !important;
+    border-color: lightgrey !important;
+    color: white;
+}
+.span-test div {
+    background-color: rgba(39, 39, 51, 0.3) !important;
+    color: white;
+}
+#root .css-6j8wv5-Input {
+    background-color: rgba(0, 0, 0, 0);
+}
+.font-weight-light {
+    color: #666666;
+}
+.nav-link {
+    color: white !important;
+}
+.nav-link.active {
+    background-color: inherit !important;
+    border-bottom: 1px solid var(--backgroundColor) !important;
+}
+.glow-button {
+    width: 50%;
+    margin: 2ch;
+    border-radius: 30px !important;
+}
+.glow-button.green {
+    box-shadow: -1px 0px 10px lightgreen;
+}
+.glow-button.red {
+    box-shadow: -1px 0px 10px #ff7f7f;
+}
+.glow-button.full {
+    box-shadow: -1px 0px 10px lightgreen;
+    width: 100%;
+}
