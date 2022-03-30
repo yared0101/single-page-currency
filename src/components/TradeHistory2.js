@@ -11,13 +11,20 @@ const TradeHistory2 = () => {
     ];
     const [selected, setSelected] = useState(0);
     return (
-        <div>
+        <div
+            style={{
+                display: "flex",
+                flex: 1,
+                flexDirection: "column",
+            }}
+        >
             <MyCard
                 tabs={tabs}
                 tabChange={setSelected}
-                body={<div style={{ height: 600 }}></div>}
+                body={<div style={{ minHeight: 100 }}></div>}
                 selectedIndex={selected}
                 title="Trade History"
+                style={{ flex: 1, display: "flex", flexDirection: "column" }}
             />
         </div>
     );

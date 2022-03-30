@@ -14,6 +14,7 @@ const MyCard = ({
     selectedIndex,
     title,
     titlePlace,
+    style,
 }) => {
     let tabsStuff = tabs?.map((elem, index) => (
         <Tab eventKey={`${index}`} title={elem} key={index}>
@@ -22,7 +23,7 @@ const MyCard = ({
     ));
 
     return (
-        <div className="me-card">
+        <div className="me-card" style={style}>
             {title && (
                 <div
                     style={{
@@ -38,7 +39,8 @@ const MyCard = ({
                     id="controlled-tab-example"
                     activeKey={`${selectedIndex}`}
                     onSelect={(k) => tabChange(Number(k))}
-                    className="mb-3"
+                    className="mb-3 scroll-tab"
+                    scroll=""
                 >
                     {tabsStuff}
                 </Tabs>

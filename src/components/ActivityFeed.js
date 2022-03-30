@@ -20,6 +20,7 @@ const ActivityFeed = () => {
                 marginBottom: "3ch",
                 backgroundColor: "rgba(0,0,0,0.3)",
                 borderRadius: 5,
+                flexWrap: "wrap",
             }}
             key={index}
         >

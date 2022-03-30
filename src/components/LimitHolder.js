@@ -23,40 +23,79 @@ const LimitHolder = () => {
         },
     ];
     const textWithInputJsx = textWithInput.map((elem, index) => (
-        <div
-            key={index}
-            style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                margin: "3ch",
-                // paddingRight: "2ch",
-            }}
-        >
-            <span>{elem.text}</span>
+        <>
             <div
+                className="huge-only"
+                key={index}
                 style={{
-                    width: "40%",
                     display: "flex",
-                    justifyContent: "flex-start",
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    margin: "3ch",
+                    // paddingRight: "2ch",
                 }}
             >
-                <input
-                    type="text"
+                <span>{elem.text}</span>
+                <div
                     style={{
-                        width: "60%",
-                        marginRight: "10px",
-                        textAlign: "center",
+                        width: "50%",
+                        display: "flex",
+                        justifyContent: "flex-start",
                     }}
-                />
-                <span style={{ marginTop: "auto" }}>{elem.afterInput}</span>
+                >
+                    <input
+                        type="text"
+                        style={{
+                            width: "60%",
+                            marginRight: "10px",
+                            textAlign: "center",
+                        }}
+                    />
+                    <span style={{ marginTop: "auto" }}>{elem.afterInput}</span>
+                </div>
             </div>
-        </div>
+            <div
+                key={index}
+                className="small-only"
+                style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    margin: "3ch",
+                    // paddingRight: "2ch",
+                }}
+            >
+                <span>{elem.text}</span>
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                    }}
+                >
+                    <input
+                        type="text"
+                        style={{
+                            width: "60%",
+                            marginRight: "10px",
+                            textAlign: "center",
+                        }}
+                    />
+                    <span style={{ marginTop: "auto" }}>{elem.afterInput}</span>
+                </div>
+            </div>
+        </>
     ));
     const body = (
         <div>
             {textWithInputJsx}
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <div
+                className="small-wrap width-50"
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                }}
+            >
                 <Button variant="outline-success" className="glow-button green">
                     Buy | Long
                 </Button>
@@ -64,15 +103,17 @@ const LimitHolder = () => {
                     Sell | Short
                 </Button>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
                 <div
                     style={{
                         width: "50%",
                         display: "flex",
                         justifyContent: "center",
+                        flexWrap: "wrap",
+                        gap: "2ch",
                     }}
                 >
-                    <span style={{ marginRight: "15%" }}>Merge</span>
+                    <span>Merge</span>
                     <span>-0.0000</span>
                 </div>
                 <div
@@ -80,9 +121,11 @@ const LimitHolder = () => {
                         width: "50%",
                         display: "flex",
                         justifyContent: "center",
+                        flexWrap: "wrap",
+                        gap: "2ch",
                     }}
                 >
-                    <span style={{ marginRight: "15%" }}>Merge</span>
+                    <span>Merge</span>
                     <span>-0.0000</span>
                 </div>
             </div>

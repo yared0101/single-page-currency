@@ -162,10 +162,8 @@ const MyWallet = () => {
                 backgroundColor: "rgba(255,255,255,0.05)",
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "space-between",
+                justifyContent: "space-evenly",
                 padding: "1ch",
-                paddingLeft: "4ch",
-                paddingRight: "4ch",
                 marginTop: "2ch",
                 marginBottom: "2ch",
                 marginLeft: "-2ch",
@@ -334,10 +332,11 @@ const MyWallet = () => {
     const fromToBoxesJsx = fromToBoxesArray.map((elem, index) => (
         <div
             key={index}
+            className="width-50"
             style={{
-                marginLeft: "5%",
+                marginLeft: "1ch",
+                marginRight: "1ch",
                 marginTop: "5%",
-                width: "90%",
                 borderRadius: "10px",
                 backgroundColor: "rgba(0,0,0,0.2)",
             }}
@@ -351,6 +350,8 @@ const MyWallet = () => {
                     marginRight: "2ch",
                     justifyContent: "space-between",
                     backgroundColor: "rgba(0,0,0,0)",
+                    flexWrap: "wrap",
+                    gap: "2ch",
                 }}
             >
                 <span>{elem.from}</span>
@@ -365,6 +366,8 @@ const MyWallet = () => {
                     justifyContent: "space-between",
                     alignItems: "center",
                     backgroundColor: "rgba(0,0,0,0)",
+                    flexWrap: "wrap",
+                    gap: "2ch",
                 }}
             >
                 <span>{elem.value}</span>
@@ -389,6 +392,7 @@ const MyWallet = () => {
                 justifyContent: "space-between",
                 margin: "3ch",
             }}
+            className="width-50"
             key={index}
         >
             <span>{elem.key}</span>
@@ -500,22 +504,25 @@ const MyWallet = () => {
         <div
             key={index}
             style={{
-                marginLeft: "5%",
+                marginLeft: "1ch",
+                marginRight: "1ch",
                 marginTop: "5%",
-                width: "90%",
                 borderRadius: "10px",
                 backgroundColor: "rgba(0,0,0,0.2)",
             }}
+            className="width-50"
         >
             <div
                 style={{
-                    display: "flex",
                     marginLeft: "2ch",
                     marginBottom: "2ch",
                     marginTop: "2ch",
                     marginRight: "2ch",
                     justifyContent: "space-between",
                     backgroundColor: "rgba(0,0,0,0)",
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "2ch",
                 }}
             >
                 <span>{elem.from}</span>
@@ -524,6 +531,8 @@ const MyWallet = () => {
             <div
                 style={{
                     display: "flex",
+                    flexWrap: "wrap",
+                    gap: "2ch",
                     marginLeft: "2ch",
                     marginRight: "2ch",
                     marginBottom: "2ch",

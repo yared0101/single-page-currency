@@ -30,6 +30,7 @@ function App() {
         //#region layout
         <div>
             <div
+                id="home"
                 style={{
                     display: "flex",
                     alignItems: "center",
@@ -49,15 +50,17 @@ function App() {
                         ZooBDoo
                     </h1>
                     <div>
-                        <a href="#" style={{ textDecoration: "none" }}>
+                        <a href="#home" style={{ textDecoration: "none" }}>
                             Trade
                         </a>
                         {"  "}
-                        <a href="#" style={{ textDecoration: "none" }}>
+
+                        <a href="#home" style={{ textDecoration: "none" }}>
                             Play
                         </a>
                         {"  "}
-                        <a href="#" style={{ textDecoration: "none" }}>
+
+                        <a href="#home" style={{ textDecoration: "none" }}>
                             Earn
                         </a>
                     </div>
@@ -90,32 +93,146 @@ function App() {
                     display: "flex",
                     width: "100%",
                     justifyContent: "space-between",
+                    paddingLeft: 10,
+                    paddingRight: 10,
                 }}
             >
-                <img
-                    src={Logo}
-                    alt="logo
-                
-                "
-                />
-                <img src={LeftLogo} alt="rect logo" />
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                    }}
+                >
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <div
+                            style={{
+                                height: 10,
+                                minWidth: 25,
+                            }}
+                        ></div>
+                        <div
+                            className="huge-only"
+                            style={{
+                                height: 25,
+                                minWidth: 10,
+                                maxWidth: 10,
+                                marginLeft: 20,
+                                backgroundColor: "orange",
+                            }}
+                        ></div>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <div
+                            className="huge-only"
+                            style={{
+                                height: 10,
+                                minWidth: 25,
+                                backgroundColor: "orange",
+                            }}
+                        ></div>
+                        <img src={Logo} alt="logo" />
+                        <h1
+                            className="huge-only"
+                            style={{ marginRight: "3ch", marginLeft: "1ch" }}
+                        >
+                            ZooBDoo
+                        </h1>
+                        <h5
+                            className="small-only"
+                            style={{
+                                display: "none",
+                                marginRight: "1ch",
+                                marginLeft: "1ch",
+                            }}
+                        >
+                            ZooBDoo
+                        </h5>
+                    </div>
+                </div>
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                    }}
+                >
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <div
+                            style={{
+                                height: 10,
+                                minWidth: 25,
+                            }}
+                        ></div>
+                        <div
+                            className="huge-only"
+                            style={{
+                                height: 25,
+                                minWidth: 10,
+                                maxWidth: 10,
+                                marginRight: 20,
+                                backgroundColor: "orange",
+                            }}
+                        ></div>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <img src={LeftLogo} alt="rect logo" />
+
+                        <div
+                            className="huge-only"
+                            style={{
+                                height: 10,
+                                minWidth: 25,
+                                backgroundColor: "orange",
+                            }}
+                        ></div>
+                    </div>
+                </div>
             </div>
             <Container>
                 <Row className="top">
-                    <Col className="main-left" md={4}>
+                    <Col
+                        className="main-left"
+                        md={{ offset: 1, span: 10 }}
+                        lg={{ span: 4, offset: 0 }}
+                    >
                         <MainLeft />
                     </Col>
-                    <Col className="main-right" md={8}>
+                    <Col
+                        className="main-right"
+                        md={{ span: 10, offset: 1 }}
+                        lg={{ span: 8, offset: 0 }}
+                        style={{
+                            display: "flex",
+                            flexDirection: "column",
+                        }}
+                    >
                         <MyWallet />
                         <TradeHistory />
-                        <TradeHistory2 />
+                        <div
+                            style={{
+                                flex: 1,
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
+                        >
+                            <TradeHistory2 />
+                        </div>
                     </Col>
                 </Row>
                 <Row className="mid">
-                    <Col className="main-left">
+                    <Col
+                        className="main-left"
+                        md={{ span: 10, offset: 1 }}
+                        lg={{ span: 6, offset: 0 }}
+                    >
                         <LimitHolder />
                     </Col>
-                    <Col className="main-right">
+                    <Col
+                        className="main-right"
+                        md={{ span: 10, offset: 1 }}
+                        lg={{ span: 6, offset: 0 }}
+                    >
                         <Information />
                     </Col>
                 </Row>
@@ -126,13 +243,14 @@ function App() {
                 </Row>
             </Container>
             <div
-                class="me-card"
+                className="me-card"
                 style={{
                     display: "flex",
                     justifyContent: "space-between",
                     width: "100%",
                     marginLeft: "0",
                     marginBottom: "0",
+                    flexWrap: "wrap",
                     borderWidth: "0",
                 }}
             >
@@ -142,6 +260,7 @@ function App() {
                         flexDirection: "column",
                         gap: "4ch",
                         marginLeft: "10%",
+                        paddingBottom: 50,
                     }}
                 >
                     <img src={Logo} alt="Logo" />
@@ -152,34 +271,54 @@ function App() {
                         token that isn't in the hands of anyone, but the
                         community
                     </p>
-                    <BsReddit size={25} />
-                    <BsDiscord size={25} />
-                    <BsFacebook size={25} />
-                    <BsInstagram size={25} />
-                    <BsTwitter size={25} />
+                    <BsReddit style={{ marginRight: 10 }} size={25} />
+                    <BsDiscord style={{ marginRight: 10 }} size={25} />
+                    <BsFacebook style={{ marginRight: 10 }} size={25} />
+                    <BsInstagram style={{ marginRight: 10 }} size={25} />
+                    <BsTwitter style={{ marginRight: 10 }} size={25} />
                 </div>
                 <div
+                    className="about-section"
                     style={{
-                        marginRight: "10%",
+                        display: "flex",
+                        justifyContent: "center",
+                        // alignItems: "center",
+                        marginTop: 20,
+                        flex: 1,
                     }}
                 >
-                    <div display={{ diplay: "flex", gap: "2ch" }}>
-                        <span style={{ marginRight: "3ch" }}>Home</span>
-                        <span style={{ marginRight: "3ch" }}>About</span>
-                        <span>Terms of Use</span>
+                    <div
+                        style={{
+                            display: "flex",
+                            gap: "2ch",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <div style={{ marginRight: "3ch" }}>Home</div>
+                        <div style={{ marginRight: "3ch" }}>Support</div>
+                        <div style={{ marginRight: "3ch" }}>Contact</div>
                     </div>
-                    <br />
-                    <br />
-                    <div display={{ diplay: "flex", gap: "2ch" }}>
-                        <span style={{ marginRight: "3ch" }}>Support</span>
-                        <span style={{ marginRight: "3ch" }}>FAQ's</span>
-                        <span>Privacy</span>
+                    <div
+                        style={{
+                            display: "flex",
+                            gap: "2ch",
+                            flexDirection: "column",
+                        }}
+                    >
+                        <div style={{ marginRight: "3ch" }}>About</div>
+                        <div style={{ marginRight: "3ch" }}>FAQ's</div>
+                        <div style={{ marginRight: "3ch" }}>White Paper</div>
                     </div>
-                    <br />
-                    <br />
-                    <div display={{ diplay: "flex", gap: "2ch" }}>
-                        <span style={{ marginRight: "3ch" }}>Contact</span>
-                        <span style={{ marginRight: "3ch" }}>White Paper</span>
+                    <div
+                        style={{
+                            display: "flex",
+                            gap: "2ch",
+                            flexDirection: "column",
+                            alignItems: "flex-start",
+                        }}
+                    >
+                        <div>Terms of Use</div>
+                        <div>Privacy</div>
                     </div>
                 </div>
             </div>

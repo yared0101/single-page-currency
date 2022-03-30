@@ -49,10 +49,13 @@ data = data.concat(data).concat(data).concat(data).concat(data);
 const TradeHistory = () => {
     const name1 = useRef(null);
     const [width1, setWidth1] = useState(0);
+    const [trigger, setTrigger] = useState();
     useEffect(() => {
-        console.log(window.innerWidth);
         name1.current && setWidth1(name1.current.offsetWidth);
-    }, []);
+    }, [trigger]);
+    window.addEventListener("resize", (e) => {
+        setTrigger(e);
+    });
     const body = (
         <div ref={name1}>
             <LineChart
